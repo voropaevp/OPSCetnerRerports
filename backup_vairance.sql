@@ -23,7 +23,7 @@ FROM "domain_JobArchive" a
   (SELECT
      masterServerId,
      clientName,
-     AVG(bytesWritten) AS "avgbytesWritten"
+     AVG(bytesWritten) AS avgbytesWritten
    FROM domain_JobArchive
    WHERE
      scheduleType = 0 AND
