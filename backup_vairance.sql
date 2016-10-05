@@ -1,8 +1,7 @@
 -- Pavel Voropaev
 -- OPS Center 7.7.3 report for backup variance, which sometimes appears broken in updated OPS Cetner
 -- Variance is calculated using annual average.
--- Picks up only full schedules which where completed partially or successfully
--- 
+-- Picks up only full schedules which where completed partially or successfully for the last 7 days
 
 
 SELECT
