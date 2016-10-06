@@ -1,6 +1,6 @@
 -- Pavel Voropaev
 -- OPS Center 7.7.3 report
--- 
+-- List of medias used for duplication jobs within last 24 hours
 
 SELECT
   b.friendlyName                      AS "Master Server",
@@ -16,7 +16,7 @@ SELECT
   CAST(c.bytesWritten / 1024 / 1024 / 1024 AS NUMERIC(20, 2)) AS "Backup Size, MB"
 FROM "nb_JobBackupAttributesArchive" a
   LEFT JOIN "domain_MasterServer" b ON (b.id = a.masterServerId)
-  LEFT JOIN "domain_JobArchive" c ON (c.masterServerId = a.masterServerId AND c.jobId = a.jobId)
+  LEFT JOIN "domain_JobArchive" c ON (c.masterServerId = a.masterServerId AND c.id = a.jobId)
   LEFT JOIN "domain_Media" d ON (c.masterServerId = d.masterServerId AND d.id = a.destMediaId)
 WHERE c.statusCode = 0 AND
       c.type = 4 AND
