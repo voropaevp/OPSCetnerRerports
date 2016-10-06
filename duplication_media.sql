@@ -17,3 +17,4 @@ FROM "nb_JobBackupAttributesArchive" d
 WHERE a.statusCode = 0 AND
       a.type = 4 AND
       DATEDIFF(hours, UTCBigIntToNomTime(startTime), GETDATE()) <= 24
+;
