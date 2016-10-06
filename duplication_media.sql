@@ -16,5 +16,5 @@ FROM "nb_JobBackupAttributesArchive" d
   LEFT JOIN "domain_Media" b ON (a.masterServerId = b.masterServerId AND b.id = d.destMediaId)
 WHERE a.statusCode = 0 AND
       a.type = 4 AND
-      DATEDIFF(hours, UTCBigIntToNomTime(startTime), GETDATE()) <= 24
+      DATEDIFF(hour, UTCBigIntToNomTime(startTime), GETDATE()) <= 24
 ;
